@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>College Student Records</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+
+<h1>Express DataBase Application</h1>
+<h2 class="version">Version <%= version %></h2>
+<h2 class="hostname">-- <%= hostname %> --</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% students.forEach(student => { %>
+    <tr>
+      <td><%= student.id %></td>
+      <td><%= student.name %></td>
+      <td><%= student.age %></td>
+      <td><a href="mailto:<%= student.email %>"><%= student.email %></a></td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+</body>
+</html>
+
