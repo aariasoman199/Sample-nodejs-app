@@ -1,0 +1,32 @@
+---
+name: "DB and App image build"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-maven:
+    name: "DB and Node app image Build"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout Source Code"
+        uses: actions/checkout@v4
+
+      - name: "DB Docker image build"
+        run: docker image build  --build-arg ROOT_PASS=${{ secrets.DB_ROOT_PASS }} -t aariasoman/mysql-college:latest .
+        working-directory: ./code/mysql-preloaded/
+        
+      - name: "DB Docker image build"
+        run: docker image build  --build-arg --build-arg DB_USER=${{ secrets.DB_USER }} --build-arg DB_PASS=${{ secrets.DB_PASS }} --build-arg DB_HOST=dbinstance.chottu.shop -t aariasoman/nodejs-mysql-app:latest .
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      - name: "push docker image"
+        run: |
+          docker push aariasoman/mysql-college:latest
+          docker push aariasoman/nodejs-mysql-app:latest

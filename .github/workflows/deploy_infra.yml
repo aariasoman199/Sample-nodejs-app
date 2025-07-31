@@ -1,0 +1,43 @@
+---
+name: "Deploy Infrastructure with Terraform"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy-infra:
+    name: "Deploy with Terraform"
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
+      TERRAFORM_VERSION: "1.12.2"
+    steps:
+      - name: "Checkout Source Code"
+        uses: actions/checkout@v4
+
+      - name: Terraform Installation
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: ${{ env.TERRAFORM_VERSION }}
+
+      - name: Terraform init
+        run: terraform init 
+        working-directory: ./terraform/
+
+      - name: Terraform fmt
+        run: terraform fmt
+        working-directory: ./terraform/
+
+      - name: Terraform validate
+        run: terraform validate
+        working-directory: ./terraform/
+
+      - name: Terraform plan
+        run: terraform plan 
+        working-directory: ./terraform/
+
+      - name: Terraform apply
+        run: terraform apply -auto-approve 
+        working-directory: ./terraform/
