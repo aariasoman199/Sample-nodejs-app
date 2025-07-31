@@ -24,20 +24,20 @@ jobs:
 
       - name: Terraform init
         run: terraform init 
-        working-directory: ./terraform/
+        working-directory: ./Terraform/
 
       - name: Terraform fmt
         run: terraform fmt
-        working-directory: ./terraform/
+        working-directory: ./Terraform/
 
       - name: Terraform validate
         run: terraform validate
-        working-directory: ./terraform/
+        working-directory: ./Terraform/
 
       - name: Terraform plan
         run: terraform plan 
-        working-directory: ./terraform/
+        working-directory: ./Terraform/
 
       - name: Terraform apply
         run: terraform apply -auto-approve 
-        working-directory: ./terraform/
+        working-directory: ./Terraform/
