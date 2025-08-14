@@ -1,0 +1,100 @@
+/* static/css/styles.css */
+/* Modern CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    padding: 20px;
+}
+
+/* Header Styles */
+h1 {
+    background-color: #4285f4;
+    color: white;
+    padding: 15px 0;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+h2 {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.version {
+    color: #ea4335;
+    font-weight: 600;
+}
+
+.hostname {
+    color: #34a853;
+    font-style: italic;
+}
+
+/* Table Styles */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+th {
+    background-color: #4285f4;
+    color: white;
+    font-weight: bold;
+    height: 40px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+tr {
+    transition: all 0.3s ease;
+    height: 30px;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tr:hover {
+    background-color: #e8f0fe;
+    transform: scale(1.01);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    table {
+        width: 95%;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+    }
+}
+
+/* Email Link Styling */
+a[href^="mailto:"] {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+a[href^="mailto:"]:hover {
+    text-decoration: underline;
+}
