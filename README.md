@@ -17,7 +17,7 @@ The project is designed to illustrate how to:
 ---
 ## Architecture
 
-<img src=“img/arya_arc.drawio.png” alt=“Architecture” width=“600”>
+<img src=“img/arya_arc.png” alt=“Architecture” width=“600”>
 
 
 ## Key Components and Architecture
