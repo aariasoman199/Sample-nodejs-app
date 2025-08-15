@@ -6,4 +6,4 @@ domain_name         = "chottu.shop"
 hostname            = "nodejs-app"
 vpc_cidr_block      = "172.16.0.0/16"
 enable_nat_gw       = true
-loadbalancer_ports = ["8080","80", "443"]
+loadbalancer_ports = ["8080", "443"]

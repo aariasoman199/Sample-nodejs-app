@@ -57,7 +57,7 @@ resource "aws_instance" "nodejsapp" {
 
 resource "aws_lb_target_group" "frontend" {
   name     = "${var.project_name}-${var.project_environment}-frontend"
-  port     = 80
+  port     = 8080
   protocol = "HTTP"
   vpc_id   = aws_vpc.main.id
 
@@ -66,6 +66,7 @@ resource "aws_lb_target_group" "frontend" {
     path                = "/health"
     protocol            = "HTTP"
     matcher             = "200"
+    port                = "8080"
     interval            = 20
     timeout             = 5
     healthy_threshold   = 2
