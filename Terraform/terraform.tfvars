@@ -1,6 +1,0 @@
-project_name        = "nodejs"
-project_environment = "production"
-instance_type       = "t2.micro"
-ami_id              = "ami-0a1235697f4afa8a4"
-domain_name         = "chottu.shop"
-hostname            = "nodejs-app"
