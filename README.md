@@ -15,12 +15,10 @@ The project is designed to illustrate how to:
 - **Automate the build and deployment workflow** via GitHub Actions for continuous integration and delivery.
 
 ---
-## Architecture
-
-<img src= "img/arya_arc.png" alt="Architecture" width="600">
-
 
 ## Key Components and Architecture
+
+<img src= "img/arya_arc.png" alt="Architecture" width="600">
 
 ### 1. Node.js Application
 
